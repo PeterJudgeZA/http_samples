@@ -1,0 +1,109 @@
+{"services": {"EmployeeSvc": {
+    "version": "1.0.0",
+    "operations": {
+        "\/": {"GET": {
+            "contentType": "application\/json",
+            "statusCode": 200,
+            "file": "$CATALINA_BASE\/webapps\/$oepas-webapp\/static\/EmployeeSvc.json"
+        }},
+        "\/Employee": {
+            "PUT": {
+                "contentType": "application\/json",
+                "options": {"writeBI": true},
+                "entity": {
+                    "name": "sports.EmployeeBE",
+                    "function": "UpdateEmployee",
+                    "arg": [{
+                        "ablName": "dsEmployee",
+                        "ablType": "DATASET",
+                        "ioMode": "INPUT-OUTPUT",
+                        "msgElem": {
+                            "type": "BODY",
+                            "name": null
+                        }
+                    }]
+                }
+            },
+            "DELETE": {
+                "contentType": "application\/json",
+                "options": {"writeBI": true},
+                "entity": {
+                    "name": "sports.EmployeeBE",
+                    "function": "DeleteEmployee",
+                    "arg": [{
+                        "ablName": "dsEmployee",
+                        "ablType": "DATASET",
+                        "ioMode": "INPUT-OUTPUT",
+                        "msgElem": {
+                            "type": "BODY",
+                            "name": null
+                        }
+                    }]
+                }
+            },
+            "POST": {
+                "contentType": "application\/json",
+                "options": {"writeBI": true},
+                "entity": {
+                    "name": "sports.EmployeeBE",
+                    "function": "CreateEmployee",
+                    "arg": [{
+                        "ablName": "dsEmployee",
+                        "ablType": "DATASET",
+                        "ioMode": "INPUT-OUTPUT",
+                        "msgElem": {
+                            "type": "BODY",
+                            "name": null
+                        }
+                    }]
+                }
+            },
+            "GET": {
+                "contentType": "application\/json",
+                "options": {"writeBI": true},
+                "entity": {
+                    "name": "sports.EmployeeBE",
+                    "function": "ReadEmployee",
+                    "arg": [
+                        {
+                            "ablName": "filter",
+                            "ablType": "CHARACTER",
+                            "ioMode": "INPUT",
+                            "msgElem": {
+                                "type": "QUERY",
+                                "name": "filter"
+                            }
+                        },
+                        {
+                            "ablName": "dsEmployee",
+                            "ablType": "DATASET",
+                            "ioMode": "OUTPUT",
+                            "msgElem": {
+                                "type": "BODY",
+                                "name": null
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "\/Employee\/SubmitEmployee (IN-OUT dataset)": {"PUT": {
+            "contentType": "application\/json",
+            "options": {"writeBI": true},
+            "entity": {
+                "name": "sports.EmployeeBE",
+                "function": "SubmitEmployee",
+                "arg": [{
+                    "ablName": "dsEmployee",
+                    "ablType": "DATASET",
+                    "ioMode": "INPUT-OUTPUT",
+                    "msgElem": {
+                        "type": "BODY",
+                        "name": null
+                    }
+                }]
+            }
+        }}
+    },
+    "schemas": {}
+}}}

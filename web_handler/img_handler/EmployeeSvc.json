@@ -1,0 +1,163 @@
+{
+    "version": "1.2",
+    "lastModified": "Wed Sep 28 14:21:02 EDT 2016",
+    "services": [{
+        "name": "EmployeeSvc",
+        "address": "\/web\/pdo\/EmployeeSvc",
+        "useRequest": true,
+        "resources": [{
+            "name": "EmployeeBE",
+            "path": "\/Employee",
+            "autoSave": false,
+            "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {"dsEmployee": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {"ttEmployee": {
+                        "type": "array",
+                        "primaryKey": ["EmpNum"],
+                        "items": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "_id": {
+                                    "type": "string",
+                                    "semanticType": "Internal"
+                                },
+                                "_errorString": {
+                                    "type": "string",
+                                    "semanticType": "Internal"
+                                },
+                                "EmpNum": {
+                                    "type": "integer",
+                                    "ablType": "INTEGER",
+                                    "default": 0,
+                                    "title": "Emp No"
+                                },
+                                "LastName": {
+                                    "type": "string",
+                                    "ablType": "CHARACTER",
+                                    "default": "",
+                                    "title": "Last Name"
+                                },
+                                "FirstName": {
+                                    "type": "string",
+                                    "ablType": "CHARACTER",
+                                    "default": "",
+                                    "title": "First Name"
+                                },
+                                "Birthdate": {
+                                    "type": "string",
+                                    "ablType": "DATE",
+                                    "default": "2016-09-28",
+                                    "title": "Birthdate",
+                                    "format": "date"
+                                },
+                                "StartDate": {
+                                    "type": "string",
+                                    "ablType": "DATE",
+                                    "default": "2016-09-28",
+                                    "title": "Start Date",
+                                    "format": "date"
+                                },
+                                "EmpPhoto": {
+                                    "type": "mr.image",
+                                    "ablType": "CHARACTER",
+                                    "default": "",
+                                    "title": "EmpPhoto",
+                                    "format": "string-json",
+                                    "contentEncoding": "binary",
+                                    "readOnly": "false"
+                                }
+                            }
+                        }
+                    }}
+                }}
+            },
+            "operations": [
+                {
+                    "path": "",
+                    "useBeforeImage": true,
+                    "type": "update",
+                    "verb": "put",
+                    "params": [
+                        {
+                            "name": "dsEmployee",
+                            "type": "REQUEST_BODY"
+                        },
+                        {
+                            "name": "dsEmployee",
+                            "type": "RESPONSE_BODY"
+                        }
+                    ]
+                },
+                {
+                    "path": "",
+                    "useBeforeImage": true,
+                    "type": "delete",
+                    "verb": "delete",
+                    "params": [
+                        {
+                            "name": "dsEmployee",
+                            "type": "REQUEST_BODY"
+                        },
+                        {
+                            "name": "dsEmployee",
+                            "type": "RESPONSE_BODY"
+                        }
+                    ]
+                },
+                {
+                    "path": "",
+                    "useBeforeImage": true,
+                    "type": "create",
+                    "verb": "post",
+                    "params": [
+                        {
+                            "name": "dsEmployee",
+                            "type": "REQUEST_BODY"
+                        },
+                        {
+                            "name": "dsEmployee",
+                            "type": "RESPONSE_BODY"
+                        }
+                    ]
+                },
+                {
+                    "name": "SubmitEmployee",
+                    "path": "\/SubmitEmployee (IN-OUT dataset)",
+                    "useBeforeImage": true,
+                    "type": "submit",
+                    "verb": "put",
+                    "params": [
+                        {
+                            "name": "dsEmployee",
+                            "type": "REQUEST_BODY"
+                        },
+                        {
+                            "name": "dsEmployee",
+                            "type": "RESPONSE_BODY"
+                        }
+                    ]
+                },
+                {
+                    "path": "?filter={filter}",
+                    "useBeforeImage": true,
+                    "type": "read",
+                    "verb": "get",
+                    "params": [
+                        {
+                            "name": "filter",
+                            "type": "QUERY"
+                        },
+                        {
+                            "name": "dsEmployee",
+                            "type": "RESPONSE_BODY"
+                        }
+                    ]
+                }
+            ]
+        }]
+    }]
+}
