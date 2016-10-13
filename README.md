@@ -12,6 +12,7 @@ In OE 11.6.0 the PASOE server added the ability to accept 'plain old' HTTP reque
 
 
 ## Prerequisites
+In order to compile/use this ABL code you MUST ensure that the OpenEdge.Net.pl procedure library appears in PROPATH. It can be found in `$DLC/tty/netlib`, `$DLC/gui/netlib` and `$DLC/src/netlib` , with the first two being r-code and the latter source code. 
 
 ## Contributions
 Pull requests are happily accepted. Each example/sample should be in its own folder under `http_client` or `web_handler` unless you find bugs and/or want to extend those examples. You MUST provide a README.md in the sample folder to be considered for inclusion.
