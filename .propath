@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <propath version="11.7ALPHA" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/propath.xsd">
-<propathentry env="all" kind="src" path="@{ROOT}\web_handler\img_handler" platform="All"/>
-<propathentry env="all" kind="src" path="@{ROOT}\http_client" platform="All"/>
+<propathentry env="all" kind="src" output="@{ROOT}\bin\web_handler\img_handler" path="@{ROOT}\web_handler\img_handler" platform="All"/>
+<propathentry env="all" kind="src" output="@{ROOT}\bin\http_client\pasoe_form_auth" path="@{ROOT}\http_client\pasoe_form_auth" platform="All"/>
+<propathentry env="all" kind="src" output="@{ROOT}\bin\http_client\pasoe_rest_api" path="@{ROOT}\http_client\pasoe_rest_api" platform="All"/>
+<propathentry env="all" kind="src" output="@{ROOT}\bin\test_mocks" path="@{ROOT}\test_mocks" platform="All"/>
+<propathentry env="all" kind="src" output="@{ROOT}\bin\http_client" path="@{ROOT}\http_client" platform="All"/>
 <propathentry env="all" kind="dir" path="@{WORK}" platform="All"/>
+<propathentry env="gui" kind="lib" path="@{DLC}\gui\netlib\OpenEdge.Net.pl" platform="All"/>
+<propathentry env="tty" kind="lib" path="@{DLC}\tty\netlib\OpenEdge.Net.pl" platform="All"/>
 <propathentry env="gui" kind="con" path="com.openedge.pdt.text.GUI_LIBRARIES" platform="All"/>
 <propathentry env="tty" kind="con" path="com.openedge.pdt.text.TTY_LIBRARIES" platform="All"/>
 <propathentry env="all" kind="con" path="com.openedge.pdt.text.DLC_PATHS" platform="All"/>
