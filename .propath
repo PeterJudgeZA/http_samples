@@ -2,6 +2,7 @@
 <propath version="11.7ALPHA" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/propath.xsd">
 <propathentry env="all" kind="src" output="@{ROOT}\bin\web_handler\img_handler" path="@{ROOT}\web_handler\img_handler" platform="All"/>
 <propathentry env="all" kind="src" output="@{ROOT}\bin\http_client\pasoe_form_auth" path="@{ROOT}\http_client\pasoe_form_auth" platform="All"/>
+<propathentry env="all" kind="src" output="@{ROOT}\bin\http_client\http_authentication" path="@{ROOT}\http_client\http_authentication" platform="All"/>
 <propathentry env="all" kind="src" output="@{ROOT}\bin\http_client\multipart_messages" path="@{ROOT}\http_client\multipart_messages" platform="All"/>
 <propathentry env="all" kind="src" output="@{ROOT}\bin\http_client\pasoe_rest_api" path="@{ROOT}\http_client\pasoe_rest_api" platform="All"/>
 <propathentry env="all" kind="dir" path="@{ROOT}\http_client\multipart_messages" platform="All"/>
