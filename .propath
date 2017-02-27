@@ -6,6 +6,9 @@
 <propathentry env="all" kind="src" output="@{ROOT}\bin\http_client\multipart_messages" path="@{ROOT}\http_client\multipart_messages" platform="All"/>
 <propathentry env="all" kind="src" output="@{ROOT}\bin\http_client\pasoe_rest_api" path="@{ROOT}\http_client\pasoe_rest_api" platform="All"/>
 <propathentry env="all" kind="dir" path="@{ROOT}\http_client\multipart_messages" platform="All"/>
+<propathentry env="all" kind="dir" path="@{ROOT}\web_handler\redirect" platform="All"/>
+<propathentry env="all" kind="src" output="@{ROOT}\bin\web_handler\data_object_handler" path="@{ROOT}\web_handler\data_object_handler" platform="All"/>
+<propathentry env="all" kind="src" output="@{ROOT}\bin\web_handler\redirect" path="@{ROOT}\web_handler\redirect" platform="All"/>
 <propathentry env="all" kind="src" output="@{ROOT}\bin\test_mocks" path="@{ROOT}\test_mocks" platform="All"/>
 <propathentry env="all" kind="src" output="@{ROOT}\bin\http_client" path="@{ROOT}\http_client" platform="All"/>
 <propathentry env="all" kind="dir" path="@{WORK}" platform="All"/>
