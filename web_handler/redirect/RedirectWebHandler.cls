@@ -15,13 +15,17 @@
   ----------------------------------------------------------------------*/
 block-level on error undo, throw.
 
+using OpenEdge.Core.ByteBucket.
+using OpenEdge.Net.HTTP.Filter.Payload.MessageWriter.
+using OpenEdge.Net.HTTP.Filter.Writer.BodyWriterBuilder.
+using OpenEdge.Net.HTTP.IHttpResponse.
 using OpenEdge.Net.HTTP.StatusCodeEnum.
+using OpenEdge.Net.URI.
 using OpenEdge.Web.IWebRequest.
 using OpenEdge.Web.WebHandler.
+using OpenEdge.Web.WebRequest.
 using OpenEdge.Web.WebResponse.
 using OpenEdge.Web.WebResponseWriter.
-using OpenEdge.Net.URI.
-using OpenEdge.Web.WebRequest.
 
 class RedirectWebHandler inherits WebHandler: 
     
@@ -45,7 +49,11 @@ class RedirectWebHandler inherits WebHandler:
                                     location:ToString())).
         
         webResponse:SetHeader('Location':u, location:ToString()). 
-        
+
+        responseWriter = new WebResponseWriter(webResponse).
+        responseWriter:Open().
+        responseWriter:Close().
+                
         return 0.
     end method. 
 
