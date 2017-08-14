@@ -48,8 +48,10 @@ define variable mData as memptr no-undo.
 define variable oHdr as HttpHeader no-undo.
 
 define variable oJsonData as JsonObject no-undo.
+define variable oKids as JsonArray no-undo.
 define variable oPic as class Memptr no-undo.
 define variable oText as String no-undo.
+define variable lcJson as longchar no-undo.
 
 define temp-table ttData no-undo
     field recordId as character
@@ -57,36 +59,46 @@ define temp-table ttData no-undo
     field description as character
     index idx1 as primary unique recordId.
 
-
 /* Create the multipart entity/body */
 assign oEntity = new MultipartEntity()
        oEntity:Boundary = 'tear-down-the-wall'
        .
 
-/** CREATE AND ATTACH THE DATASET AS JSON **/
+/** CREATE AND ATTACH THE TEMP-TABLE AS JSON **/
 create ttData.
 assign ttData.recordId    = guid
        ttData.lastUpdate  = now
        ttData.description = 'the first record'
        .
-        
 create ttData.
 assign ttData.recordId    = guid
        ttData.lastUpdate  = now
        ttData.description = 'the second record'
        .
 
+buffer ttData:write-json('longchar', lcJson).
+assign oPart = new MessagePart('application/json':u, new String(lcJson)).
+
+/* You can write the JSON this way too
 assign oJsonData = new JsonObject().
-oJsonData:Read(buffer ttData:handle).
+buffer ttData:write-json('JsonObject', oJsonData).
 
 assign oPart = new MessagePart('application/json':u, oJsonData).
+*/
+
 oEntity:AddPart(oPart).
 
 /** CREATE AND ATTACH THE MANUAL JSON  **/
 assign oJsonData = new JsonObject().
 oJsonData:Add('firstProperty', now).
 oJsonData:AddNull('secondProp').
-oJsonData:Add('children', new JsonArray(3)).
+
+oKids = new JsonArray().
+oKids:Add('Peter').
+oKids:Add('Paul').
+oKids:Add('Mary').
+
+oJsonData:Add('children', oKids).
 
 assign oPart = new MessagePart('application/json':u, oJsonData).
 oEntity:AddPart(oPart).
