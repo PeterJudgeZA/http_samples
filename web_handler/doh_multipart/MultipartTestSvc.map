@@ -1,0 +1,75 @@
+{
+    "services": {
+        "MultipartTestSvc": {
+            "version": "1.0.0",
+            "operations": {
+                "/": {
+                    "POST": {
+                        "contentType": "application/json",
+                        "entity": {
+                            "name": "MultipartTest",
+                            "function": "WriteMultipart",
+                            "arg": [
+                                {
+                                    "ablName": "pEntity",
+                                    "ablType": "CLASS OpenEdge.Net.MultipartEntity",
+                                    "ioMode": "INPUT",
+                                    "msgElem": {
+                                        "type": "BODY",
+                                        "name": null
+                                    }
+                                },
+                                {
+                                    "ablName": "",
+                                    "ablType": "CLASS Progress.Json.ObjectModel.JsonObject",
+                                    "ioMode": "RETURN",
+                                    "msgElem": {
+                                        "type": "BODY",
+                                        "name": null
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "GET": {
+                        "contentType": "multipart/mixed; boundary=my-part-bound",
+                        "entity": {
+                            "name": "MultipartTest",
+                            "function": "ReadMultipart",
+                            "arg": [
+                                {
+                                    "ablName": "pNumParts",
+                                    "ablType": "INTEGER",
+                                    "ioMode": "INPUT",
+                                    "msgElem": {
+                                        "type": "CONSTANT",
+                                        "name": "4"
+                                    }
+                                },
+                                {
+                                    "ablName": "pBoundary",
+                                    "ablType": "CHARACTER",
+                                    "ioMode": "INPUT",
+                                    "msgElem": {
+                                        "type": "CONSTANT",
+                                        "name": "my-part-bound"
+                                    }
+                                },
+                                {
+                                    "ablName": "",
+                                    "ablType": "CLASS OpenEdge.Net.MultipartEntity",
+                                    "ioMode": "RETURN",
+                                    "msgElem": {
+                                        "type": "BODY",
+                                        "name": null
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "schemas": null
+        }
+    }
+}
