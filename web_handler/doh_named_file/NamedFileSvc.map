@@ -1,0 +1,97 @@
+{
+    "services": {
+        "NamedFileSvc": {
+            "version": "1.0.0",
+            "operations": {
+                "/bytes": {
+                    "GET": {
+                        "contentType": "image/png",
+                        "entity": {
+                            "name": "NamedFile",
+                            "function": "ReadNamedImage",
+                            "arg": [
+                                {
+                                    "ablName": "pContentDisposition",
+                                    "ablType": "CLASS OpenEdge.Net.HTTP.HttpHeader",
+                                    "ioMode": "RETURN",
+                                    "msgElem": {
+                                        "type": "HEADER",
+                                        "name": "Content-Disposition"
+                                    }
+                                },
+                                {
+                                    "ablName": "pImage",
+                                    "ablType": "CLASS OpenEdge.Core.Memptr",
+                                    "ioMode": "OUTPUT",
+                                    "msgElem": {
+                                        "type": "BODY",
+                                        "name": null
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/bytes/charHeader": {
+                    "GET": {
+                        "contentType": "image/png",
+                        "entity": {
+                            "name": "NamedFile",
+                            "function": "ReadNamedImage",
+                            "arg": [
+                                {
+                                    "ablName": "pContentDisposition",
+                                    "ablType": "CHARACTER",
+                                    "ioMode": "OUTPUT",
+                                    "msgElem": {
+                                        "type": "HEADER",
+                                        "name": "Content-Disposition"
+                                    }
+                                },
+                                {
+                                    "ablName": "",
+                                    "ablType": "CLASS OpenEdge.Core.Memptr",
+                                    "ioMode": "RETURN",
+                                    "msgElem": {
+                                        "type": "BODY",
+                                        "name": null
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/stream": {
+                    "GET": {
+                        "contentType": "image/png",
+                        "entity": {
+                            "name": "NamedFile",
+                            "function": "ReadNamedImage",
+                            "arg": [
+                                {
+                                    "ablName": "pContentDisposition",
+                                    "ablType": "CLASS OpenEdge.Net.HTTP.HttpHeader",
+                                    "ioMode": "RETURN",
+                                    "msgElem": {
+                                        "type": "HEADER",
+                                        "name": "Content-Disposition"
+                                    }
+                                },
+                                {
+                                    "ablName": "pImage",
+                                    "ablType": "CLASS Progress.IO.FileInputStream",
+                                    "ioMode": "OUTPUT",
+                                    "msgElem": {
+                                        "type": "BODY",
+                                        "name": null
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "schemas": null
+        }
+    }
+}
