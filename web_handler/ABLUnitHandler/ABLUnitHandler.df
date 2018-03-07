@@ -1,0 +1,73 @@
+ADD TABLE "ClientSessions"
+  AREA "Schema Area"
+  DUMP-NAME "clientsessions"
+
+ADD FIELD "clientguid" OF "ClientSessions" AS character 
+  FORMAT "x(8)"
+  INITIAL ""
+  POSITION 2
+  MAX-WIDTH 16
+  ORDER 10
+
+ADD FIELD "sessionguid" OF "ClientSessions" AS character 
+  FORMAT "x(8)"
+  INITIAL ""
+  POSITION 3
+  MAX-WIDTH 16
+  ORDER 20
+  MANDATORY
+
+ADD FIELD "startTime" OF "ClientSessions" AS datetime-tz 
+  FORMAT "99/99/9999 HH:MM:SS.SSS+HH:MM"
+  INITIAL ?
+  POSITION 4
+  MAX-WIDTH 12
+  ORDER 30
+
+ADD FIELD "endTime" OF "ClientSessions" AS datetime-tz 
+  FORMAT "99/99/9999 HH:MM:SS.SSS+HH:MM"
+  INITIAL ?
+  POSITION 5
+  MAX-WIDTH 12
+  ORDER 40
+
+ADD FIELD "sessionStatus" OF "ClientSessions" AS character 
+  FORMAT "x(8)"
+  INITIAL ""
+  POSITION 6
+  MAX-WIDTH 16
+  ORDER 50
+
+ADD FIELD "execTime" OF "ClientSessions" AS int64 
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  POSITION 7
+  MAX-WIDTH 8
+  ORDER 60
+
+ADD FIELD "testStatus" OF "ClientSessions" AS character 
+  FORMAT "x(8)"
+  INITIAL ""
+  POSITION 8
+  MAX-WIDTH 16
+  ORDER 70
+
+ADD FIELD "testcases" OF "ClientSessions" AS character 
+  FORMAT "x(8)"
+  INITIAL ""
+  POSITION 9
+  MAX-WIDTH 16
+  ORDER 80
+
+ADD FIELD "testname" OF "ClientSessions" AS character 
+  FORMAT "x(8)"
+  INITIAL ""
+  POSITION 10
+  MAX-WIDTH 16
+  ORDER 90
+
+.
+PSC
+cpstream=ISO8859-1
+.
+0000001345
