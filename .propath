@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <propath version="11.7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/propath.xsd">
+<propathentry env="all" kind="src" output="@{ROOT}\bin\web_handler\request_echo" path="@{ROOT}\web_handler\request_echo" platform="All"/>
 <propathentry env="all" kind="src" output="@{ROOT}\bin\web_handler\img_handler" path="@{ROOT}\web_handler\img_handler" platform="All"/>
 <propathentry env="all" kind="src" output="@{ROOT}\bin\web_handler\doh_multipart" path="@{ROOT}\web_handler\doh_multipart" platform="All"/>
 <propathentry env="all" kind="src" output="@{ROOT}\bin\web_handler\doh_named_file" path="@{ROOT}\web_handler\doh_named_file" platform="All"/>
