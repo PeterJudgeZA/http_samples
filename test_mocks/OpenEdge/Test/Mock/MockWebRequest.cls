@@ -15,13 +15,7 @@
   ----------------------------------------------------------------------*/
 block-level on error undo, throw.
 
-using OpenEdge.Net.HTTP.Cookie.
-using OpenEdge.Net.HTTP.HttpHeader.
-using OpenEdge.Web.IWebRequest.
-using Progress.Lang.AppError.
-using Progress.Lang.Object.
-using OpenEdge.Net.HTTP.HttpRequest.
-using OpenEdge.Core.Assert.
+using OpenEdge.Test.Mock.MockWebRequest.
 
 class OpenEdge.Test.Mock.MockWebRequest inherits HttpRequest implements IWebRequest: 
     define private temp-table ttKeyValue no-undo

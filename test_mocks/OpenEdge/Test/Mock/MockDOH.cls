@@ -11,10 +11,6 @@
   ----------------------------------------------------------------------*/
 block-level on error undo, throw.
 
-using OpenEdge.Net.HTTP.IHttpResponse.
-using OpenEdge.Web.DataObject.DataObjectHandler.
-using OpenEdge.Web.DataObject.MappedOperation.
-using OpenEdge.Web.IWebRequest.
 
 class OpenEdge.Test.Mock.MockDOH inherits DataObjectHandler: 
     define public property Response as IHttpResponse no-undo get. protected set.

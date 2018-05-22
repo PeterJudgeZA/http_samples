@@ -16,9 +16,6 @@
 
 block-level on error undo, throw.
 
-using OpenEdge.Net.ServerConnection.ClientSocket.
-using OpenEdge.Net.ServerConnection.SocketReadEventArgs.
-using OpenEdge.Core.Memptr.
 
 class OpenEdge.Test.Mock.MockSocket inherits ClientSocket: 
 
