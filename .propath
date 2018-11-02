@@ -11,6 +11,8 @@
 <propathentry env="all" kind="src" output="@{ROOT}\bin\http_client\multipart_messages" path="@{ROOT}\http_client\multipart_messages" platform="All"/>
 <propathentry env="all" kind="src" output="@{ROOT}\bin\http_client\pasoe_rest_api" path="@{ROOT}\http_client\pasoe_rest_api" platform="All"/>
 <propathentry env="all" kind="src" output="@{ROOT}\bin\http_client\ssl" path="@{ROOT}\http_client\ssl" platform="All"/>
+<propathentry env="all" kind="src" output="@{ROOT}\http_client\timeouts" path="@{ROOT}\http_client\timeouts" platform="All"/>
+<propathentry env="all" kind="dir" path="@{ROOT}\dlc-src" platform="All"/>
 <propathentry env="gui" kind="con" name="Standard GUI Libraries" path="com.openedge.pdt.text.GUI_LIBRARIES" platform="All"/>
 <propathentry env="tty" kind="con" name="Standard TTY Libraries" path="com.openedge.pdt.text.TTY_LIBRARIES" platform="All"/>
 </propath>
