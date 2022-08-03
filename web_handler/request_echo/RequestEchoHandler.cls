@@ -108,6 +108,7 @@ class RequestEchoHandler implements IWebHandler:
         define variable msgBody as Progress.Lang.Object no-undo.
         define variable showCgi as logical no-undo.
         define variable partData as memptr no-undo.
+        define variable cp as handle no-undo.        
         
         if not valid-object(pResp) then
             assign pResp = new WebResponse().
@@ -162,6 +163,43 @@ class RequestEchoHandler implements IWebHandler:
         do cnt = extent(cookie) to 1 by -1:
             childObject:Add(cookie[cnt]:Name, cookie[cnt]:ToString()).
         end.
+        
+        assign childObject = new JsonObject()
+			   cp		   = session:current-request-info:GetClientPrincipal()
+			   .
+        data:Add('user', childObject).
+        if valid-handle(cp) then
+        do:
+			childObject:Add('qualifiedUserId', cp:qualified-user-id).
+			childObject:Add('domainType', cp:domain-type).
+			childObject:Add('loginState', cp:login-state).
+			childObject:Add('sealAt', cp:seal-timestamp).
+			childObject:Add('expireAt', cp:login-expiration-timestamp).
+			childObject:Add('sessionId', cp:session-id).
+			
+			childArray = new JsonArray().
+			childObject:Add('roles', childArray).
+			cnt = num-entries(cp:roles).
+			do loop = 1 to cnt:
+				childArray:Add(entry(loop, cp:roles)).
+			end.
+			
+			childArray = new JsonArray().
+			childObject:Add('properties', childArray).
+			extent(names) = 1.
+			names[1] = cp:list-property-names().
+			cnt = num-entries(names[1]).
+			do loop = 1 to cnt:
+				childData = new JsonObject().
+				childArray:Add(childData).
+				childData:Add(entry(loop, names[1]), cp:get-property(entry(loop, names[1]))).
+			end.
+			
+			delete object cp.
+        end.
+        else
+			data:SetNull('user').
+			       
         
         assign ew = EntityWriterBuilder:Build(pReq):Writer.
         if not valid-object(ew) then
